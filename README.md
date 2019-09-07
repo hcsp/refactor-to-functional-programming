@@ -1,6 +1,10 @@
 # 函数式编程练习：使用函数式重构代码
 
-祝你好运！
+我在以下这些文件中给你留了一些挑战，请完成之。追你好运！
+
+- [`RefactorToConsumer`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToConsumer.java)
+- [`RefactorToFunction`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToFunction.java)
+- [`RefactorToSupplier`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToSupplier.java)
 
 -----
 注意！我们只允许你修改以下文件，对其他文件的修改会被拒绝：
@@ -8,6 +12,6 @@
 -----
 
 
-完成题目有困难？不妨来看看[写代码啦的相应课程](https://xiedaimala.com/tasks/9bf0fb20-929d-4e17-891a-4673291d74a0)吧！
+完成题目有困难？不妨来看看[写代码啦的相应课程](https://xiedaimala.com/tasks/71c7be59-2705-4b5a-bbe3-bcc8b5ee04c4)吧！
 
-回到[写代码啦的题目](https://xiedaimala.com/tasks/9bf0fb20-929d-4e17-891a-4673291d74a0/quizzes/1b0fc390-74ad-4f55-b355-90b8a9154cc5)，继续挑战！ 
+回到[写代码啦的题目](https://xiedaimala.com/tasks/71c7be59-2705-4b5a-bbe3-bcc8b5ee04c4/quizzes/b33dbdfb-ae0c-4e5b-80bd-a8a92bed88c1)，继续挑战！ 
