@@ -2,9 +2,9 @@
 
 我在以下这些文件中给你留了一些挑战，请完成之。追你好运！
 
-- [`RefactorToConsumer`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToConsumer.java)
-- [`RefactorToFunction`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToFunction.java)
-- [`RefactorToSupplier`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/com/github/hcsp/functional/RefactorToSupplier.java)
+- [`RefactorToConsumer`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/java/com/github/hcsp/functional/RefactorToConsumer.java)
+- [`RefactorToFunction`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/java/com/github/hcsp/functional/RefactorToFunction.java)
+- [`RefactorToSupplier`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/java/com/github/hcsp/functional/RefactorToSupplier.java)
 
 -----
 注意！我们只允许你修改以下文件，对其他文件的修改会被拒绝：
