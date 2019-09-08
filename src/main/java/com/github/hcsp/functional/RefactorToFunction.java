@@ -12,23 +12,11 @@ public class RefactorToFunction {
         System.out.println(Arrays.toString(minus(a, b)));
         System.out.println(Arrays.toString(multiply(a, b)));
         System.out.println(Arrays.toString(divide(a, b)));
-
-        System.out.println("\nUse IntBinaryOperator\n");
-
-        System.out.println(Arrays.toString(calculate(a, b, (x, y) -> x + y)));
-        System.out.println(Arrays.toString(calculate(a, b, (x, y) -> x - y)));
-        System.out.println(Arrays.toString(calculate(a, b, (x, y) -> x * y)));
-        System.out.println(Arrays.toString(calculate(a, b, (x, y) -> x / y)));
     }
 
     // 请尝试将下列四个方法使用IntBinaryOperator进行重构，减少重复代码
     public static int[] calculate(int[] a, int[] b, IntBinaryOperator operator) {
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; ++i) {
-            result[i] = operator.applyAsInt(a[i], b[i]);
-        }
-        return result;
-
+        return null;
     }
 
     // 将两个数组中的每个数字分别相加，然后返回相加后的数组。你可以假定传入的数组都是等长的
@@ -38,7 +26,7 @@ public class RefactorToFunction {
     public static int[] add(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] - b[i];
+            result[i] = a[i] + b[i];
         }
         return result;
     }
@@ -46,7 +34,7 @@ public class RefactorToFunction {
     public static int[] minus(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] - b[i];
+            result[i] = a[i] + b[i];
         }
         return result;
     }
@@ -54,7 +42,7 @@ public class RefactorToFunction {
     public static int[] multiply(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] * b[i];
+            result[i] = a[i] + b[i];
         }
         return result;
     }
@@ -62,7 +50,7 @@ public class RefactorToFunction {
     public static int[] divide(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] / b[i];
+            result[i] = a[i] + b[i];
         }
         return result;
     }

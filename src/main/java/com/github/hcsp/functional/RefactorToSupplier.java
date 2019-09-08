@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 public class RefactorToSupplier {
     private static int randomInt() {
@@ -17,25 +14,12 @@ public class RefactorToSupplier {
         System.out.println(createObjects());
         System.out.println(createStrings());
         System.out.println(createRandomIntegers());
-
-        System.out.println("\nUse Supplier\n");
-
-        System.out.println(create(Object::new));
-        System.out.println(create(String::new, true));
-        System.out.println(create(RefactorToSupplier::randomInt));
     }
 
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        return create(supplier, false);
-    }
-
-    private static List<Object> create(Supplier<Object> supplier, boolean isSupplyString) {
-        return Stream.iterate(0, x -> x + 1)
-                .limit(10)
-                .map(x -> isSupplyString ? supplier.get() + x.toString() : supplier.get())
-                .collect(toList());
+        return null;
     }
 
     public static List<Object> createObjects() {
