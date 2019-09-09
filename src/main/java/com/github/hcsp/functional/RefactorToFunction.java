@@ -34,7 +34,7 @@ public class RefactorToFunction {
     public static int[] minus(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] + b[i];
+            result[i] = a[i] - b[i];
         }
         return result;
     }
@@ -42,7 +42,7 @@ public class RefactorToFunction {
     public static int[] multiply(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] + b[i];
+            result[i] = a[i] * b[i];
         }
         return result;
     }
@@ -50,7 +50,7 @@ public class RefactorToFunction {
     public static int[] divide(int[] a, int[] b) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] + b[i];
+            result[i] = a[i] / b[i];
         }
         return result;
     }
