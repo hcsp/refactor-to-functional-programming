@@ -1,11 +1,13 @@
 package com.github.hcsp.functional;
 
 import com.github.blindpirate.extensions.CaptureSystemOutput;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -30,7 +32,7 @@ public class FunctionalTest {
     public void functionTest() {
         int[] results =
                 RefactorToFunction.calculate(
-                        new int[] {1, 2}, new int[] {3, 4}, (a, b) -> (a * 2 + b));
-        Assertions.assertArrayEquals(results, new int[] {5, 8});
+                        new int[]{1, 2}, new int[]{3, 4}, (a, b) -> (a * 2 + b));
+        Assertions.assertArrayEquals(results, new int[]{5, 8});
     }
 }
