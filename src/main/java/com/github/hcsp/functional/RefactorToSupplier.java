@@ -1,14 +1,11 @@
 package com.github.hcsp.functional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 public class RefactorToSupplier {
-    private static final boolean IS_SUPPLY_STRING = true;
     private static int randomInt() {
         return new Random().nextInt();
     }
@@ -22,25 +19,30 @@ public class RefactorToSupplier {
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        return create(supplier, false);
-    }
-
-    private static List<Object> create(Supplier<Object> supplier, boolean isSupplyString) {
-        return Stream.iterate(0, x -> x + 1)
-                .limit(10)
-                .map(x -> isSupplyString ? supplier.get() + x.toString() : supplier.get())
-                .collect(toList());
+        return null;
     }
 
     public static List<Object> createObjects() {
-        return create(Object::new);
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add(new Object());
+        }
+        return result;
     }
 
     public static List<Object> createStrings() {
-        return create(String::new, IS_SUPPLY_STRING);
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add("" + i);
+        }
+        return result;
     }
 
     public static List<Object> createRandomIntegers() {
-        return create(RefactorToSupplier::randomInt);
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add(randomInt());
+        }
+        return result;
     }
 }
