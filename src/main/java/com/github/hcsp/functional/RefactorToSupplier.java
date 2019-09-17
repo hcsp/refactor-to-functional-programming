@@ -3,10 +3,10 @@ package com.github.hcsp.functional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
+    private static int n=0;
     private static int randomInt() {
         return new Random().nextInt();
     }
@@ -33,8 +33,7 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createStrings() {
-        AtomicInteger i = new AtomicInteger(0);
-        return create(() -> "" + i.getAndIncrement());
+        return create(() -> "" + (n++));
     }
 
     public static List<Object> createRandomIntegers() {
