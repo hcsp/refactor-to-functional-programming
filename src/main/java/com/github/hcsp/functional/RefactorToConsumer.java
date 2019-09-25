@@ -15,15 +15,28 @@ public class RefactorToConsumer {
         printWithComma(map1, map2);
         printWithDash(map1, map2);
         printWithColon(map1, map2);
+
+
+        System.out.println("\nUse BiConsumer\n");
+        printWithConsumer(map1, map2, produceBiConsumer(","));
+        printWithConsumer(map1, map2, produceBiConsumer("-"));
+        printWithConsumer(map1, map2, produceBiConsumer(":"));
     }
 
     // 请尝试使用BiConsumer函数式接口重构下列三个方法，消除重复代码，提高可读性
     // 提示：你可以使用Map.forEach方法
     // 加分项：如果你能编写一个返回BiConsumer的高阶函数（即"返回函数的函数"），那就更好了
+    private static BiConsumer<String, String> produceBiConsumer(String separator) {
+        return (k, v) -> System.out.println(k + separator + v);
+    }
+
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+        map1.forEach(consumer);
+        map2.forEach(consumer);
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
         for (Map.Entry<String, String> entry : map1.entrySet()) {
