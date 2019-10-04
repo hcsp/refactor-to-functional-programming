@@ -11,21 +11,15 @@ public class RefactorToSupplier {
     }
 
     public static void main(String[] args) {
-        System.out.println(create(Object::new));
-        System.out.println(create(() -> ""));
-        System.out.println(create(RefactorToSupplier::randomInt));
+        System.out.println(createObjects());
+        System.out.println(createStrings());
+        System.out.println(createRandomIntegers());
     }
 
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Object value = supplier.get();
-            Object item = "".equals(value) ? ((String) value + i) : value;
-            result.add(item);
-        }
-        return result;
+        return null;
     }
 
     public static List<Object> createObjects() {
