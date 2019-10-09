@@ -1,5 +1,6 @@
 package com.github.hcsp.functional;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
@@ -23,47 +24,23 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+        Arrays.asList(map1, map2).forEach(item -> item.forEach(consumer));
+    }
+
+    public static BiConsumer<String, String> printWithOperator(String operator) {
+        return (s1, s2) -> System.out.println(s1 + operator + s2);
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
+        printWithConsumer(map1, map2, printWithOperator(","));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
+        printWithConsumer(map1, map2, printWithOperator("-"));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
+        printWithConsumer(map1, map2, printWithOperator(":"));
     }
 }
