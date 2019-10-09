@@ -2,6 +2,7 @@ package com.github.hcsp.functional;
 
 import java.util.Arrays;
 import java.util.function.IntBinaryOperator;
+import java.util.stream.IntStream;
 
 public class RefactorToFunction {
     public static void main(String[] args) {
@@ -14,9 +15,9 @@ public class RefactorToFunction {
         System.out.println(Arrays.toString(divide(a, b)));
     }
 
-    // 请尝试将下列四个方法使用IntBinaryOperator进行重构，减少重复代码
+    // 请尝试将下列四个方法使用 IntBinaryOperator 进行重构，减少重复代码
     public static int[] calculate(int[] a, int[] b, IntBinaryOperator operator) {
-        return null;
+        return IntStream.range(0, a.length).map(i -> operator.applyAsInt(a[i], b[i])).toArray();
     }
 
     // 将两个数组中的每个数字分别相加，然后返回相加后的数组。你可以假定传入的数组都是等长的
@@ -24,34 +25,18 @@ public class RefactorToFunction {
     // 例如，a=[1, 2, 3], b=[4, 5, 6]
     // 返回 [5 (1+4), 7 (2+5), 9 (3+6)]
     public static int[] add(int[] a, int[] b) {
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] + b[i];
-        }
-        return result;
+        return calculate(a, b, (n1, n2) -> n1 + n2);
     }
 
     public static int[] minus(int[] a, int[] b) {
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] - b[i];
-        }
-        return result;
+        return calculate(a, b, (n1, n2) -> n1 - n2);
     }
 
     public static int[] multiply(int[] a, int[] b) {
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] * b[i];
-        }
-        return result;
+        return calculate(a, b, (n1, n2) -> n1 * n2);
     }
 
     public static int[] divide(int[] a, int[] b) {
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; ++i) {
-            result[i] = a[i] / b[i];
-        }
-        return result;
+        return calculate(a, b, (n1, n2) -> n1 / n2);
     }
 }
