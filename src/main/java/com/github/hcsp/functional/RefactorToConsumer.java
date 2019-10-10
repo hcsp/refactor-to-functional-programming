@@ -39,6 +39,7 @@ public class RefactorToConsumer {
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
         printWithConsumer(map1, map2, printWithtargt(":"));
     }
+
     public static BiConsumer<String, String> printWithtargt(String target) {
         return (s1, s2) -> System.out.println(s1 + target + s2);
     }

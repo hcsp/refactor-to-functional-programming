@@ -1,9 +1,7 @@
 package com.github.hcsp.functional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
