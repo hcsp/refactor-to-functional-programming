@@ -23,47 +23,28 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+        map1.forEach(consumer);
+        map2.forEach(consumer);
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
+        map1.forEach(printBy(","));
+        map2.forEach(printBy(","));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
+        map1.forEach(printBy("-"));
+        map2.forEach(printBy("-"));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
+        map1.forEach(printBy(":"));
+        map2.forEach(printBy(":"));
     }
+
+    public static BiConsumer<String, String> printBy(String separator) {
+        return (String s1, String s2) -> System.out.println(s1 + separator + s2);
+    }
+
 }
