@@ -19,18 +19,18 @@ public class RefactorToSupplier {
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        return null;
-    }
-
-    public static List<Object> createObjects() {
         List<Object> result = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            result.add(new Object());
+            result.add(supplier.get());
         }
         return result;
     }
 
-    public static List<Object> createStrings() {
+    private static List<Object> createObjects() {
+        return create(Object::new);
+    }
+
+    private static List<Object> createStrings() {
         List<Object> result = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             result.add("" + i);
@@ -38,11 +38,7 @@ public class RefactorToSupplier {
         return result;
     }
 
-    public static List<Object> createRandomIntegers() {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(randomInt());
-        }
-        return result;
+    private static List<Object> createRandomIntegers() {
+        return create(RefactorToSupplier::randomInt);
     }
 }
