@@ -1,7 +1,6 @@
 package com.github.hcsp.functional;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.function.IntBinaryOperator;
 
 public class RefactorToFunction {
