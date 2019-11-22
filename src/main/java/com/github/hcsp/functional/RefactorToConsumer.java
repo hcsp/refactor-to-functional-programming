@@ -30,6 +30,7 @@ public class RefactorToConsumer {
     }
 
     public static BiConsumer<String, String> printWith(String str) {
+
         return (k, v) -> System.out.println(k + str + v);
     }
 
