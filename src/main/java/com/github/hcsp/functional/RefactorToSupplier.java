@@ -19,13 +19,8 @@ public class RefactorToSupplier {
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(supplier.get());
-        }
-        return result;
+        return null;
     }
-
 
     public static List<Object> createObjects() {
         List<Object> result = new ArrayList<>();
