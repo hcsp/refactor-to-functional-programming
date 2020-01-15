@@ -12,9 +12,9 @@ public class RefactorToConsumer {
         Map<String, String> map2 =
                 Stream.of("d", "e", "f").collect(Collectors.toMap(k -> k, v -> v));
 
-        printWithConsumer(map1, map2, buildConsumer(","));
-        printWithConsumer(map1, map2, buildConsumer("-"));
-        printWithConsumer(map1, map2, buildConsumer(":"));
+        printWithComma(map1, map2);
+        printWithDash(map1, map2);
+        printWithColon(map1, map2);
     }
 
     // 请尝试使用BiConsumer函数式接口重构下列三个方法，消除重复代码，提高可读性
@@ -23,12 +23,47 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {
-        map1.forEach(consumer);
-        map2.forEach(consumer);
+            BiConsumer<String, String> consumer) {}
+
+    public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
+        for (Map.Entry<String, String> entry : map1.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + "," + value);
+        }
+
+        for (Map.Entry<String, String> entry : map2.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + "," + value);
+        }
     }
 
-    public static BiConsumer<String, String> buildConsumer(String mark) {
-        return (s1, s2) -> System.out.println(s1 + mark + s2);
+    public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
+        for (Map.Entry<String, String> entry : map1.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + "-" + value);
+        }
+
+        for (Map.Entry<String, String> entry : map2.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + "-" + value);
+        }
+    }
+
+    public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
+        for (Map.Entry<String, String> entry : map1.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + ":" + value);
+        }
+
+        for (Map.Entry<String, String> entry : map2.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + ":" + value);
+        }
     }
 }
