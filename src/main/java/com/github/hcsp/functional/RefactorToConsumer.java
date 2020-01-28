@@ -28,45 +28,19 @@ public class RefactorToConsumer {
         map2.forEach(consumer);
     }
 
-    public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
+    public static BiConsumer<String, String> biConsumer(String symbol) {
+        return (k, v) -> System.out.println(k + symbol + v);
+    }
 
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
+    public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
+        printWithConsumer(map1, map2, biConsumer(","));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
+        printWithConsumer(map1, map2, biConsumer("-"));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
+        printWithConsumer(map1, map2, biConsumer(":"));
     }
 }
