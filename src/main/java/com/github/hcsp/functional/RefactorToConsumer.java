@@ -23,7 +23,10 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+        map1.forEach(consumer);
+        map2.forEach(consumer);
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
         for (Map.Entry<String, String> entry : map1.entrySet()) {
