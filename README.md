@@ -1,6 +1,6 @@
 # 函数式编程练习：使用函数式重构代码
 
-我在以下这些文件中给你留了一些挑战，请完成之。追你好运！
+我在以下这些文件中给你留了一些挑战，请完成之。祝你好运！
 
 - [`RefactorToConsumer`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/java/com/github/hcsp/functional/RefactorToConsumer.java)
 - [`RefactorToFunction`](https://github.com/hcsp/refactor-to-functional-programming/blob/master/src/main/java/com/github/hcsp/functional/RefactorToFunction.java)
