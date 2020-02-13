@@ -1,6 +1,5 @@
 package com.github.hcsp.functional;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
