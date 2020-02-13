@@ -32,7 +32,7 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createStrings() {
-        AtomicInteger i= new AtomicInteger(0);
+        AtomicInteger i = new AtomicInteger(0);
         return create(() -> i.getAndIncrement());
     }
 

@@ -18,7 +18,7 @@ public class RefactorToFunction {
     public static int[] calculate(int[] a, int[] b, IntBinaryOperator operator) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; ++i) {
-            result[i]=operator.applyAsInt(a[i],b[i]);
+            result[i] = operator.applyAsInt(a[i], b[i]);
         }
         return result;
     }
@@ -28,18 +28,18 @@ public class RefactorToFunction {
     // 例如，a=[1, 2, 3], b=[4, 5, 6]
     // 返回 [5 (1+4), 7 (2+5), 9 (3+6)]
     public static int[] add(int[] a, int[] b) {
-        return calculate(a, b, (ai, bi) -> ai+bi);
+        return calculate(a, b, (ai, bi) -> ai + bi);
     }
 
     public static int[] minus(int[] a, int[] b) {
-        return calculate(a, b, (ai, bi) -> ai-bi);
+        return calculate(a, b, (ai, bi) -> ai - bi);
     }
 
     public static int[] multiply(int[] a, int[] b) {
-        return calculate(a, b, (ai, bi) -> ai*bi);
+        return calculate(a, b, (ai, bi) -> ai * bi);
     }
 
     public static int[] divide(int[] a, int[] b) {
-        return calculate(a, b, (ai, bi) -> ai/bi);
+        return calculate(a, b, (ai, bi) -> ai / bi);
     }
 }
