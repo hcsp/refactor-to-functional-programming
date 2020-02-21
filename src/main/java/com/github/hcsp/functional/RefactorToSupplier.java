@@ -27,29 +27,14 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createObjects() {
-        return create(new Supplier<Object>() {
-            @Override
-            public Object get() {
-                return new Object();
-            }
-        });
+        return create(Object::new);
     }
 
     public static List<Object> createStrings() {
-        return create(new Supplier<Object>() {
-            @Override
-            public Object get() {
-                return "";
-            }
-        });
+        return create(() -> "");
     }
 
     public static List<Object> createRandomIntegers() {
-        return create(new Supplier<Object>() {
-            @Override
-            public Object get() {
-                return randomInt();
-            }
-        });
+        return create(RefactorToSupplier::randomInt);
     }
 }

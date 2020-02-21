@@ -28,38 +28,18 @@ public class RefactorToFunction {
     // 例如，a=[1, 2, 3], b=[4, 5, 6]
     // 返回 [5 (1+4), 7 (2+5), 9 (3+6)]
     public static int[] add(int[] a, int[] b) {
-        return calculate(a, b, new IntBinaryOperator() {
-            @Override
-            public int applyAsInt(int left, int right) {
-                return left + right;
-            }
-        });
+        return calculate(a, b, Integer::sum);
     }
 
     public static int[] minus(int[] a, int[] b) {
-        return calculate(a, b, new IntBinaryOperator() {
-            @Override
-            public int applyAsInt(int left, int right) {
-                return left - right;
-            }
-        });
+        return calculate(a, b, (left, right) -> left - right);
     }
 
     public static int[] multiply(int[] a, int[] b) {
-        return calculate(a, b, new IntBinaryOperator() {
-            @Override
-            public int applyAsInt(int left, int right) {
-                return left * right;
-            }
-        });
+        return calculate(a, b, (left, right) -> left * right);
     }
 
     public static int[] divide(int[] a, int[] b) {
-        return calculate(a, b, new IntBinaryOperator() {
-            @Override
-            public int applyAsInt(int left, int right) {
-                return left / right;
-            }
-        });
+        return calculate(a, b, (left, right) -> left / right);
     }
 }

@@ -29,29 +29,14 @@ public class RefactorToConsumer {
     }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, new BiConsumer<String, String>() {
-            @Override
-            public void accept(String s, String s2) {
-                System.out.println(s + "," + s2);
-            }
-        });
+        printWithConsumer(map1, map2, (s, s2) -> System.out.println(s + "," + s2));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, new BiConsumer<String, String>() {
-            @Override
-            public void accept(String s, String s2) {
-                System.out.println(s + "-" + s2);
-            }
-        });
+        printWithConsumer(map1, map2, (s, s2) -> System.out.println(s + "-" + s2));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, new BiConsumer<String, String>() {
-            @Override
-            public void accept(String s, String s2) {
-                System.out.println(s + ":" + s2);
-            }
-        });
+        printWithConsumer(map1, map2, (s, s2) -> System.out.println(s + ":" + s2));
     }
 }
