@@ -6,6 +6,8 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
+    private static int i = 0;
+
     private static int randomInt() {
         return new Random().nextInt();
     }
@@ -18,31 +20,30 @@ public class RefactorToSupplier {
 
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
-    public static List<Object> create(Supplier<Object> supplier) {
-        return null;
-    }
-
-    public static List<Object> createObjects() {
-        List<Object> result = new ArrayList<>();
+    public static List create(Supplier<Object> supplier) {
+        List result = new ArrayList();
         for (int i = 0; i < 10; i++) {
-            result.add(new Object());
+            result.add(supplier.get());
         }
         return result;
     }
 
-    public static List<Object> createStrings() {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add("" + i);
-        }
-        return result;
+    public static List createObjects() {
+        return create(Object::new);
     }
 
-    public static List<Object> createRandomIntegers() {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(randomInt());
-        }
-        return result;
+    public static List createStrings() {
+        return create(RefactorToSupplier::incrementNum);
+
+    }
+
+    private static String incrementNum() {
+        String string = "" + i++;
+        System.out.println(string);
+        return string;
+    }
+
+    public static List createRandomIntegers() {
+        return create(RefactorToSupplier::randomInt);
     }
 }
