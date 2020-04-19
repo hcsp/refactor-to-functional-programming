@@ -48,6 +48,6 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createRandomIntegers() {
-        return create(() -> 0);
+        return create(RefactorToSupplier::randomInt);
     }
 }
