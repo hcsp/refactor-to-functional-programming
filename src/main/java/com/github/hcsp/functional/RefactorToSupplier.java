@@ -7,11 +7,11 @@ import java.util.function.Supplier;
 
 public class RefactorToSupplier {
     private static int count = 0;
-    
+
     private static int randomInt() {
         return new Random().nextInt();
     }
-    
+
     private static String IncreaseInteger() {
         return "" + count++;
     }
