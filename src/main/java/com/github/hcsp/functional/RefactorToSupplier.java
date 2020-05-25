@@ -3,6 +3,7 @@ package com.github.hcsp.functional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
@@ -21,8 +22,7 @@ public class RefactorToSupplier {
     public static List<Object> create(Supplier<Object> supplier) {
         List<Object> result = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            Object value = supplier.get();
-            result.add("".equals(value) ? Integer.toString(i) : supplier.get());
+            result.add(supplier.get());
         }
         return result;
     }
@@ -32,7 +32,8 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createStrings() {
-        return create(() -> "");
+        AtomicInteger i = new AtomicInteger();
+        return create(() -> Integer.toString(i.getAndIncrement()));
     }
 
     public static List<Object> createRandomIntegers() {
