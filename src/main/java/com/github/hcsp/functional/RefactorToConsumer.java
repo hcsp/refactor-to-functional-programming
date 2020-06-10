@@ -21,27 +21,27 @@ public class RefactorToConsumer {
     // 提示：你可以使用Map.forEach方法
     // 加分项：如果你能编写一个返回BiConsumer的高阶函数（即"返回函数的函数"），那就更好了
     public static void printWithConsumer(
-             Map<String, String> map1,
-             Map<String, String> map2,
-             BiConsumer<String, String> consumer) {
-                map1.forEach(consumer);
-                map2.forEach(consumer);
-            }
+            Map<String, String> map1,
+            Map<String, String> map2,
+            BiConsumer<String, String> consumer) {
+        map1.forEach(consumer);
+        map2.forEach(consumer);
+    }
 
-            static BiConsumer<String, String> printWithAll(String i){
-               return  (k,v)->System.out.println(k+i+v);
-                }
+    static BiConsumer<String, String> printWithAll(String i) {
+        return (k, v) -> System.out.println(k + i + v);
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,printWithAll(","));
+        printWithConsumer(map1, map2, printWithAll(","));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,printWithAll("-"));
+        printWithConsumer(map1, map2, printWithAll("-"));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,printWithAll(":"));
+        printWithConsumer(map1, map2, printWithAll(":"));
     }
 }
 
