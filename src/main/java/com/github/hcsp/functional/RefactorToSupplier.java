@@ -3,7 +3,6 @@ package com.github.hcsp.functional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
@@ -20,15 +19,15 @@ public class RefactorToSupplier {
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(supplier.get());
-        }
-        return result;
+        return null;
     }
 
     public static List<Object> createObjects() {
-        return create(Object::new);
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add(new Object());
+        }
+        return result;
     }
 
     public static List<Object> createStrings() {
@@ -36,11 +35,14 @@ public class RefactorToSupplier {
         for (int i = 0; i < 10; i++) {
             result.add("" + i);
         }
-        AtomicInteger i = new AtomicInteger();
-        return create(() -> "" + i.getAndIncrement());
+        return result;
     }
 
     public static List<Object> createRandomIntegers() {
-        return create(RefactorToSupplier::randomInt);
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add(randomInt());
+        }
+        return result;
     }
 }
