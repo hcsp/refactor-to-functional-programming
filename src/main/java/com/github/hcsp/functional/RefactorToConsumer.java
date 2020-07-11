@@ -39,6 +39,6 @@ public class RefactorToConsumer {
     }
 
     static BiConsumer<String, String> printlnWithSymbol(String symbol) {
-        return (k, v) -> System.out.println((k + symbol + v));
+        return (k, v) -> System.out.println(k + symbol + v);
     }
 }
