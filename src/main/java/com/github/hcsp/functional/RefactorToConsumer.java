@@ -24,19 +24,19 @@ public class RefactorToConsumer {
             Map<String, String> map1,
             Map<String, String> map2,
             BiConsumer<String, String> consumer) {
-        map1.forEach((k,v) ->  consumer.accept(k,v));
-        map2.forEach((k,v) ->  consumer.accept(k,v));
+        map1.forEach((k, v) -> consumer.accept(k, v));
+        map2.forEach((k, v) -> consumer.accept(k, v));
     }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,(k,v) -> System.out.println(k + "," + v));
+        printWithConsumer(map1, map2, (k, v) -> System.out.println(k + "," + v));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,(k,v) -> System.out.println(k + "," + v));
+        printWithConsumer(map1, map2, (k, v) -> System.out.println(k + "," + v));
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1,map2,(k,v) -> System.out.println(k + "," + v));
+        printWithConsumer(map1, map2, (k, v) -> System.out.println(k + "," + v));
     }
 }
