@@ -11,34 +11,18 @@ public class RefactorToSupplier {
     }
 
     public static void main(String[] args) {
-        // System.out.println(createObjects());
-        // System.out.println(createStrings());
-        // System.out.println(createRandomIntegers());
-        System.out.println(create(Object::new));
-        System.out.println(create(RefactorToSupplier::getStrings));
-        System.out.println(create(RefactorToSupplier::randomInt));
-    }
-
-
-    private static List<String> getStrings() {
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add("" + i);
-        }
-        return result;
+        System.out.println(createObjects());
+        System.out.println(createStrings());
+        System.out.println(createRandomIntegers());
     }
 
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(supplier.get());
-        }
-        return result;
+        return null;
     }
 
-/*    public static List<Object> createObjects() {
+    public static List<Object> createObjects() {
         List<Object> result = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             result.add(new Object());
@@ -47,7 +31,11 @@ public class RefactorToSupplier {
     }
 
     public static List<Object> createStrings() {
-        return getStrings();
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add("" + i);
+        }
+        return result;
     }
 
     public static List<Object> createRandomIntegers() {
@@ -56,5 +44,5 @@ public class RefactorToSupplier {
             result.add(randomInt());
         }
         return result;
-    }*/
+    }
 }
