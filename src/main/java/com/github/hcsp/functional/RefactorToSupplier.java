@@ -6,6 +6,8 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
+    static Integer i = 0;
+
     private static int randomInt() {
         return new Random().nextInt();
     }
@@ -19,23 +21,19 @@ public class RefactorToSupplier {
     // 请尝试使用函数式接口Supplier对三个方法进行重构，消除冗余代码
     // 并尽量尝试使用lambda表达式和方法引用来传递参数
     public static List<Object> create(Supplier<Object> supplier) {
-        return null;
+        List<Object> result = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            result.add(supplier.get());
+        }
+        return result;
     }
 
     public static List<Object> createObjects() {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add(new Object());
-        }
-        return result;
+        return create(Object::new);
     }
 
     public static List<Object> createStrings() {
-        List<Object> result = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            result.add("" + i);
-        }
-        return result;
+        return create(() -> Integer.toString(i++));
     }
 
     public static List<Object> createRandomIntegers() {
