@@ -20,7 +20,7 @@ public class RefactorToConsumer {
     // 请尝试使用BiConsumer函数式接口重构下列三个方法，消除重复代码，提高可读性
     // 提示：你可以使用Map.forEach方法
     // 加分项：如果你能编写一个返回BiConsumer的高阶函数（即"返回函数的函数"），那就更好了
-    static BiConsumer<String, String> HOCBiConsumer(String sign) {
+    static BiConsumer<String, String> hocBiConsumer(String sign) {
         return (String str1, String str2) -> System.out.printf("%s%s%s%n", str1, sign, str2);
     }
 
