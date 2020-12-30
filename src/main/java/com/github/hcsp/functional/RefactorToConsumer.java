@@ -24,7 +24,7 @@ public class RefactorToConsumer {
             Map<String, String> map1,
             Map<String, String> map2,
             BiConsumer<String, String> consumer) {
-//        Stream.of(map1, map2).forEach(stringStringMap -> stringStringMap.forEach(consumer));
+        Stream.of(map1, map2).forEach(stringStringMap -> stringStringMap.forEach(consumer));
     }
 
     public static class commaBiConsumer implements BiConsumer<String, String> {
