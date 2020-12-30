@@ -23,47 +23,43 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+//        Stream.of(map1, map2).forEach(stringStringMap -> stringStringMap.forEach(consumer));
+    }
+
+    public static class commaBiConsumer implements BiConsumer<String, String> {
+
+        @Override
+        public void accept(String s, String s2) {
+            System.out.println(s + "," + s2);
+        }
+    }
+
+    public static class dashBiConsumer implements BiConsumer<String, String> {
+
+        @Override
+        public void accept(String s, String s2) {
+            System.out.println(s + "-" + s2);
+        }
+    }
+
+    public static class colonBiConsumer implements BiConsumer<String, String> {
+
+        @Override
+        public void accept(String s, String s2) {
+            System.out.println(s + ":" + s2);
+        }
+    }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "," + value);
-        }
+        printWithConsumer(map1, map2, new commaBiConsumer());
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + "-" + value);
-        }
+        printWithConsumer(map1, map2, new dashBiConsumer());
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
-
-        for (Map.Entry<String, String> entry : map2.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            System.out.println(key + ":" + value);
-        }
+        printWithConsumer(map1, map2, new colonBiConsumer());
     }
 }
