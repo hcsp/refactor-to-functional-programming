@@ -2,7 +2,6 @@ package com.github.hcsp.functional;
 
 import java.util.Arrays;
 import java.util.function.IntBinaryOperator;
-import java.util.stream.Stream;
 
 public class RefactorToFunction {
     public static void main(String[] args) {
