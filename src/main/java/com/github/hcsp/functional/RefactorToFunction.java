@@ -32,14 +32,14 @@ public class RefactorToFunction {
     }
 
     public static int[] minus(int[] a, int[] b) {
-        return calculate(a, b, ((left, right) -> left - right));
+        return calculate(a, b, (left, right) -> left - right);
     }
 
     public static int[] multiply(int[] a, int[] b) {
-        return calculate(a, b, ((left, right) -> left * right));
+        return calculate(a, b, (left, right) -> left * right);
     }
 
     public static int[] divide(int[] a, int[] b) {
-        return calculate(a, b, ((left, right) -> left / right));
+        return calculate(a, b, (left, right) -> left / right);
     }
 }
