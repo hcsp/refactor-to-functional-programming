@@ -28,16 +28,20 @@ public class RefactorToConsumer {
         map2.forEach(consumer);
     }
 
+    public static BiConsumer<String, String> createBiConsumer(String separator) {
+        return (key, value) -> System.out.println(key + separator + value);
+    }
+
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + "," + value));
+        printWithConsumer(map1, map2, createBiConsumer(","));
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + "-" + value));
+        printWithConsumer(map1, map2, createBiConsumer("-"));
 
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + ":" + value));
+        printWithConsumer(map1, map2, createBiConsumer(":"));
     }
 }
