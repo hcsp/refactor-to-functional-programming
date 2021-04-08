@@ -12,13 +12,9 @@ public class RefactorToConsumer {
         Map<String, String> map2 =
                 Stream.of("d", "e", "f").collect(Collectors.toMap(k -> k, v -> v));
 
-//        printWithComma(map1, map2);
-//        printWithDash(map1, map2);
-//        printWithColon(map1, map2);
-
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + "," + value));
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + "-" + value));
-        printWithConsumer(map1, map2, (key, value) -> System.out.println(key + ":" + value));
+        printWithComma(map1, map2);
+        printWithDash(map1, map2);
+        printWithColon(map1, map2);
     }
 
     // 请尝试使用BiConsumer函数式接口重构下列三个方法，消除重复代码，提高可读性
@@ -27,11 +23,7 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {
-        //BiConsumer一次吃两个
-        map1.forEach(consumer);
-        map2.forEach(consumer);
-    }
+            BiConsumer<String, String> consumer) {}
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
         for (Map.Entry<String, String> entry : map1.entrySet()) {
