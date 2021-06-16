@@ -23,9 +23,22 @@ public class RefactorToConsumer {
     public static void printWithConsumer(
             Map<String, String> map1,
             Map<String, String> map2,
-            BiConsumer<String, String> consumer) {}
+            BiConsumer<String, String> consumer) {
+        for (Map.Entry<String, String> entry : map1.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + ":" + value);
+        }
 
-    public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
+        for (Map.Entry<String, String> entry : map2.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + ":" + value);
+        }
+
+    }
+
+    public static void printWithComma(Map<String, String> map1, Map<String, String> map2)   {
         for (Map.Entry<String, String> entry : map1.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
