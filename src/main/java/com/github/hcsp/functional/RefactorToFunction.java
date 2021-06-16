@@ -22,10 +22,10 @@ public class RefactorToFunction {
 //        }
 //        return result;
 //    }
-    public static int[] calculate(int[] a,int[]b,IntBinaryOperator intBinaryOperator){
+    public static int[] calculate(int[] a, int[] b, IntBinaryOperator intBinaryOperator) {
         int[] result = new int[a.length];
         for (int i = 0; i < a.length; i++) {
-            result[i] = intBinaryOperator.applyAsInt(a[i],b[i]);
+            result[i] = intBinaryOperator.applyAsInt(a[i], b[i]);
         }
         return result;
     }
@@ -45,20 +45,10 @@ public class RefactorToFunction {
 
 
     public static int[] multiply(int[] a, int[] b) {
-      return calculate(a,b, (x,y)->x*y);
+        return calculate(a, b, (x, y) -> x * y);
     }
 
     public static int[] divide(int[] a, int[] b) {
-     return calculate(a,b,(x,y)->x/y);
+        return calculate(a, b, (x, y) -> x / y);
     }
-
-
-  public static int[] calculateWithMyHead(int[] a, int[] b){
-        int[] result = new int[a.length];
-      for (int i = 0; i < a.length; i++) {
-          result[i]=a[i] *b[i];
-      }
-      return result;
-  }
-
 }
