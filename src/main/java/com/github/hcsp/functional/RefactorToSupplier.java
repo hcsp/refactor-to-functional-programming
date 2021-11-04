@@ -3,7 +3,6 @@ package com.github.hcsp.functional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.function.IntBinaryOperator;
 import java.util.function.Supplier;
 
 public class RefactorToSupplier {
