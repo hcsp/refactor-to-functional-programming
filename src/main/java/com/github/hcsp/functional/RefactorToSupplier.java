@@ -33,7 +33,7 @@ public class RefactorToSupplier {
 
     public static List<Object> createStrings() {
         AtomicInteger i = new AtomicInteger();
-        return create(()-> "" + i.getAndIncrement() );
+        return create(() -> "" + i.getAndIncrement());
     }
 
     public static List<Object> createRandomIntegers() {
