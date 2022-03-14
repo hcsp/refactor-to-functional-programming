@@ -29,29 +29,14 @@ public class RefactorToSupplier {
 
     public static List<Object> createObjects() {
         return create(Object::new);
-//        List<Object> result = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            result.add(new Object());
-//        }
-//        return result;
     }
 
     public static List<Object> createStrings() {
         AtomicInteger i = new AtomicInteger();
         return create(() -> i.getAndIncrement() + "");
-//        List<Object> result = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            result.add("" + i);
-//        }
-//        return result;
     }
 
     public static List<Object> createRandomIntegers() {
         return create(RefactorToSupplier::randomInt);
-//        List<Object> result = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            result.add(randomInt());
-//        }
-//        return result;
     }
 }

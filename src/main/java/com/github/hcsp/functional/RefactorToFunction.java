@@ -28,38 +28,18 @@ public class RefactorToFunction {
     // 例如，a=[1, 2, 3], b=[4, 5, 6]
     // 返回 [5 (1+4), 7 (2+5), 9 (3+6)]
     public static int[] add(int[] a, int[] b) {
-//        int[] result = new int[a.length];
-//        for (int i = 0; i < a.length; ++i) {
-//            result[i] = a[i] + b[i];
-//        }
-//        return result;
         return calculate(a, b, Integer::sum);
     }
 
     public static int[] minus(int[] a, int[] b) {
-//        int[] result = new int[a.length];
-//        for (int i = 0; i < a.length; ++i) {
-//            result[i] = a[i] - b[i];
-//        }
-//        return result;
         return calculate(a, b, (left, right) -> left - right);
     }
 
     public static int[] multiply(int[] a, int[] b) {
-//        int[] result = new int[a.length];
-//        for (int i = 0; i < a.length; ++i) {
-//            result[i] = a[i] * b[i];
-//        }
-//        return result;
         return calculate(a, b, (left, right) -> left * right);
     }
 
     public static int[] divide(int[] a, int[] b) {
-//        int[] result = new int[a.length];
-//        for (int i = 0; i < a.length; ++i) {
-//            result[i] = a[i] / b[i];
-//        }
-//        return result;
         return calculate(a, b, (left, right) -> left / right);
     }
 }
