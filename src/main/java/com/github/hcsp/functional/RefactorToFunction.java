@@ -20,7 +20,7 @@ public class RefactorToFunction {
         int[] result = new int[length];
 
         for (int i = 0; i < length; i++) {
-            result[i] = operator.applyAsInt((a[i]), b[i]);
+            result[i] = operator.applyAsInt(a[i], b[i]);
         }
 
         return result;
