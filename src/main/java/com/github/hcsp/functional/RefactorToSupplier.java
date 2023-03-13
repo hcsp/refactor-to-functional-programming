@@ -24,15 +24,10 @@ public class RefactorToSupplier {
         for (int i = 0; i < 10; i++) {
             result.add(supplier.get());
         }
-        return null;
+        return result;
     }
 
     public static List<Object> createObjects() {
-//        List<Object> result = new ArrayList<>();
-//        for (int i = 0; i < 10; i++) {
-//            result.add(new Object());
-//        }
-//        return result;
         return create(Object::new);
     }
 
