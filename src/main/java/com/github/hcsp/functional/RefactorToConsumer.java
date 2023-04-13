@@ -29,15 +29,15 @@ public class RefactorToConsumer {
     }
 
     public static void printWithComma(Map<String, String> map1, Map<String, String> map2) {
-        printWithPrefix(",").accept(map1,map2);
+        printWithPrefix(",").accept(map1, map2);
     }
 
     public static void printWithDash(Map<String, String> map1, Map<String, String> map2) {
-        printWithPrefix("-").accept(map1,map2);
+        printWithPrefix("-").accept(map1, map2);
 
     }
 
     public static void printWithColon(Map<String, String> map1, Map<String, String> map2) {
-        printWithPrefix(":").accept(map1,map2);
+        printWithPrefix(":").accept(map1, map2);
     }
 }
