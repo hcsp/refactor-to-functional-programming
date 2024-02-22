@@ -8,9 +8,6 @@ import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 public class RefactorToSupplier {
-    private static int randomInt() {
-        return new Random().nextInt();
-    }
 
     public static void main(String[] args) {
         System.out.println(createObjects());
